@@ -1,0 +1,116 @@
+{
+  "A Flask app appears to be run with debug=True": {
+    "mitigation": "Set 'debug=False' in production Flask apps to prevent code execution via the debugger."
+  },
+  "pickle.load": {
+    "mitigation": "Avoid using 'pickle.load' with untrusted input; use safer alternatives like 'json' for data deserialization."
+  },
+  "yaml.load": {
+    "mitigation": "Use 'yaml.safe_load' instead of 'yaml.load' to avoid arbitrary code execution from untrusted input."
+  },
+  "subprocess": {
+    "mitigation": "Avoid passing unsanitized user input to subprocess calls; use argument lists instead of shell=True."
+  },
+  "subprocess call with shell": {
+    "mitigation": "Do not use 'shell=True' with subprocess if input includes user data; prefer 'shell=False' with argument arrays."
+  },
+  "shell injection": {
+    "mitigation": "Sanitize user input and avoid using shell interpreters when executing commands; use secure APIs."
+  },
+  "input": {
+    "mitigation": "Validate and sanitize user input before processing; use type-checking and allow-lists when applicable."
+  },
+  "raw_input": {
+    "mitigation": "Use 'input()' with validation (Python 3) and never use input from untrusted sources without sanitization."
+  },
+  "hardcoded_password": {
+    "mitigation": "Remove hardcoded credentials from code; use environment variables or secure vaults for secrets."
+  },
+  "sql injection": {
+    "mitigation": "Use parameterized queries or ORM frameworks to prevent SQL injection vulnerabilities."
+  },
+  "plaintext credentials": {
+    "mitigation": "Never store passwords in plaintext; always hash them using a strong algorithm with salt (e.g., bcrypt)."
+  },
+  "md5": {
+    "mitigation": "Replace MD5 with a modern cryptographic hash like SHA-256 or a password-hashing algorithm like bcrypt."
+  },
+  "sha1": {
+    "mitigation": "Avoid SHA-1 due to known weaknesses; use SHA-256 or stronger algorithms."
+  },
+  "use of http": {
+    "mitigation": "Use HTTPS instead of HTTP to ensure encrypted communication and prevent MITM attacks."
+  },
+  "ssl.PROTOCOL_SSLv3": {
+    "mitigation": "Avoid using SSLv3 due to vulnerabilities; use TLS 1.2 or higher."
+  },
+  "open without encoding": {
+    "mitigation": "Specify encoding explicitly when opening files (e.g., encoding='utf-8') to prevent encoding-related bugs."
+  },
+  "xml.etree.ElementTree": {
+    "mitigation": "Avoid parsing untrusted XML with ElementTree; consider 'defusedxml' to prevent XXE attacks."
+  },
+  "cgi.FieldStorage": {
+    "mitigation": "Avoid using outdated 'cgi' module; validate input strictly or use modern frameworks for web apps."
+  },
+  "assert": {
+    "mitigation": "Do not use 'assert' statements for security checks, as they can be disabled with optimization flags."
+  },
+  "wildcard import": {
+    "mitigation": "Avoid wildcard imports; use explicit imports to improve code readability and prevent conflicts."
+  },
+  "django debug": {
+    "mitigation": "Disable DEBUG mode in Django in production to prevent leakage of sensitive system information."
+  },
+  "insecure cookie": {
+    "mitigation": "Set cookie flags like Secure, HttpOnly, and SameSite to protect against XSS and CSRF."
+  },
+  "weak cryptography": {
+    "mitigation": "Use industry-standard and up-to-date cryptographic libraries and algorithms."
+  },
+  "insecure deserialization": {
+    "mitigation": "Avoid deserializing untrusted input; use safe formats (like JSON) and implement integrity checks."
+  },
+  "tempfile.mktemp": {
+    "mitigation": "Do not use 'mktemp'; use 'tempfile.NamedTemporaryFile' instead to avoid race conditions."
+  },
+  "xmlrpc": {
+    "mitigation": "Avoid exposing XML-RPC interfaces to untrusted networks or validate inputs strictly."
+  },
+  "jwt.decode without verify": {
+    "mitigation": "Always set 'verify=True' when decoding JWTs to ensure token signature verification."
+  },
+  "directory traversal": {
+    "mitigation": "Sanitize file paths and enforce directory boundaries using safe APIs like 'os.path.abspath'."
+  },
+  "path traversal": {
+    "mitigation": "Restrict file access to known directories and validate user-supplied file paths."
+  },
+  "command injection": {
+    "mitigation": "Avoid passing user input into shell commands; use secure APIs and input validation."
+  },
+  "csrf": {
+    "mitigation": "Use anti-CSRF tokens and enforce proper same-origin policies in web applications."
+  },
+  "xss": {
+    "mitigation": "Sanitize and escape all user-generated output; use Content Security Policy (CSP) headers."
+  },
+  "cross site scripting": {
+    "mitigation": "Validate, sanitize, and encode output from user input; apply strict CSP headers."
+  },
+  "open redirect": {
+    "mitigation": "Validate and restrict redirect targets to trusted URLs only."
+  },
+  "xxe": {
+    "mitigation": "Disable external entity resolution when parsing XML, or use secure XML parsers like 'defusedxml'."
+  },
+  "xml external entity": {
+    "mitigation": "Prevent XXE by disabling DTDs and using secure XML parsers."
+  },
+  "jwt none algorithm": {
+    "mitigation": "Reject JWTs with 'alg':'none'; configure libraries to require strong signature verification."
+  },
+  "starting a process with a shell": {
+    "mitigation": "Avoid 'shell=True' in subprocess calls; use argument lists and input validation instead."
+  }
+}
