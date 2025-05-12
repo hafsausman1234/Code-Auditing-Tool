@@ -20,16 +20,30 @@ Output:
 Terminal: Color-coded summary of issues. File: audit_report.html with enriched details (CVE, severity, and mitigation).
 
 Tools and Frameworks Used:
+The tools/libraries with their respective purposes are listed below:
+Bandit:              
+Detects Python-specific security issues
 
-Tool/Library	       Purpose
-Bandit	             Detects Python-specific security issues
-Flake8	             Flags syntax and formatting problems
-Semgrep	             Finds logic-based and pattern-matching security flaws
-multiprocessing	     Runs scans in parallel to improve performance
-subprocess	         Executes CLI tools from the Python script
-prettytable	         Formats terminal output in a readable table
-html.escape	         Safely renders text in the HTML report
-JSON	               Used to store CVE mappings and mitigations
+Flake8:
+Flags syntax and formatting problems
+
+Semgrep:
+Finds logic-based and pattern-matching security flaws
+
+multiprocessing:
+Runs scans in parallel to improve performance
+
+subprocess:
+Executes CLI tools from the Python script
+
+prettytable:
+Formats terminal output in a readable table
+
+html.escape:
+Safely renders text in the HTML report
+
+JSON:
+Used to store CVE mappings and mitigations
 
 Project Files
 code-auditing-tool/ │ ├── code_auditing_tool_with_reporting.py # Main script ├── vuln_to_cve_mapping.json # CVE keyword mapping ├── vuln_mitigations.json # Mitigation suggestions ├── vuln_code.py and vuln2.py # Python files to scan └── README.md # This file
