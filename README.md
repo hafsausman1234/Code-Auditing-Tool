@@ -1,10 +1,5 @@
 Python Code Auditing Tool
-Group Number: 7
-Group Members:
-Syeda Mehak Ejaz (CR-22001)
-Hafsa Usman (CR-22003)
-Syeda Abiha Shams (CR-22018)
-Ayesha Majid (CR-22026)
+
 Project Description
 This project is a Python-based static code auditing tool that scans Python source files for security vulnerabilities, syntax errors, and insecure coding practices. It integrates three widely-used scanners — Bandit, Flake8, and Semgrep — and enhances their findings with mapped Common Vulnerabilities and Exposures (CVEs) and mitigation suggestions.
 
